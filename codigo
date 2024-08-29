@@ -1,0 +1,38 @@
+int buttonState = 0;
+int vermelho = 1;
+int amarelo = 3;
+int verde = 5;
+int portaBotton = 10;
+
+void setup()
+{
+  pinMode(vermelho, OUTPUT);
+  pinMode(amarelo, OUTPUT);
+  pinMode(verde, OUTPUT);
+  pinMode(portaBotton, INPUT);
+}
+
+void loop()
+{
+	buttonState = digitalRead(portaBotton);
+  if(buttonState == HIGH){
+  	digitalWrite(verde, HIGH);
+    delay(3000);
+    digitalWrite(verde, LOW);
+    
+    digitalWrite(amarelo, HIGH);
+    delay(1000);
+    digitalWrite(amarelo, LOW);
+    
+    digitalWrite(vermelho, HIGH);
+    delay(2000);
+    digitalWrite(vermelho, LOW);
+    
+    
+  } else {
+  	digitalWrite(vermelho, LOW);
+    digitalWrite(amarelo, LOW);
+    digitalWrite(verde, LOW);
+    
+  }
+}

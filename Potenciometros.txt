@@ -1,0 +1,24 @@
+const int pot1Pin = A0;
+const int pot2Pin = A1;
+
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  int pot1Value = analogRead(pot1Pin);
+  int pot2Value = analogRead(pot2Pin);
+
+  float pot1Power = pot1Value * (5.0 / 1023.0);
+  float pot2Power = pot2Value * (5.0 / 1023.0);
+
+  Serial.print("EIXO X: ");
+  Serial.print(pot1Power);
+  Serial.print(" V\t");
+
+  Serial.print("EIXO Y: ");
+  Serial.print(pot2Power);
+  Serial.println(" V");
+
+  delay(500);
+}
